@@ -1,0 +1,10 @@
+1...after creating a user model to see if its working properly or not you can 
+create super user and go in admmin panel and see or you can use tools such as sqllite viewer
+
+
+2..to be able to see model users in admin panel you should register that model in admin.py
+from .models import user
+@admin.register(User)
+....
+...
+etc
