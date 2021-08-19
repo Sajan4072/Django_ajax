@@ -1,0 +1,3 @@
+in place of model user, they say default user ??
+
+proper use of migration ??? in actual world and project
