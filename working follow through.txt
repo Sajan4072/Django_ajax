@@ -8,3 +8,11 @@ from .models import user
 ....
 ...
 etc
+
+3.using the models, we can create modelforms(in forms.py)that can be rendered and shown to user
+
+4....if we need bootstrap wala form we need to set visit add classes etc (CK)
+??
+
+
+5..since our model form is ready we need to render it in views

@@ -1,3 +1,5 @@
 in place of model user, they say default user ??
 
-proper use of migration ??? in actual world and project
+proper use of migration ??? in actual world and project??
+
+how forms.py(modelfrom,meta etc) and it actually works??
