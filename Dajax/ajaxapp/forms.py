@@ -4,6 +4,6 @@ from .models import User
 class StudentRegistration(forms.ModelForm):
     class Meta:
         model=User
-        fields=['name','emai','password']
+        fields=['name','email','password']
         
 
