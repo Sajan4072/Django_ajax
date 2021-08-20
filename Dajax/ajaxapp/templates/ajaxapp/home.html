@@ -19,9 +19,16 @@
                 <h4 class="text-center alert alert-info">ADD/UPDATE/Student</h4>
                 <form action="" method="post">
                     {% csrf_token %} {{ form.as_p }}
-
+                    <input type="button" class="btn btn-success" id="btnsave" value="save" />
                 </form>
-                <input type="button" class="btn btn-success" id="btnsave" value="save" />
+
+            </div>
+            <div class="col-sm-7">
+
+                <h2 class="text-center alert alert-danger">
+                    SHOW INFO
+                </h2>
+                <table class="tab"></table>
             </div>
 
         </div>
