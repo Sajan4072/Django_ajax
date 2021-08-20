@@ -11,7 +11,7 @@ etc
 
 3.using the models, we can create modelforms(in forms.py)that can be rendered and shown to user
 
-4....if we need bootstrap wala form we need to set visit add classes etc (CK)
+4....if we need bootstrap wala form we need to set widgets add classes etc (CK)
 ??
 
 
@@ -25,4 +25,11 @@ form=StudentRegistration()  //creating an object
 8.in html, inside body inside form tag csrf and {form.as_p}
 
 9..styling the form with bootstrap by linking in head 
+
+10. create a div with class (and bootstrap such as mt-5,text-center,alert alert-danger etc can be given inside class itself)
+
+11...form ko fields ma widgets ko through dekhi classes lagaunu parcha 
+i.e in forms.py
+
+
 
