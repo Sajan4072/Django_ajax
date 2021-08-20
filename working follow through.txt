@@ -16,3 +16,11 @@ etc
 
 
 5..since our model form is ready we need to render it in views
+
+6.. so create template/home.hmtl for displaying 
+7.. write the view since we need blank form so 
+form=StudentRegistration()  //creating an object 
+{'form':form} this is context
+
+8.in html
+
