@@ -22,5 +22,5 @@ etc
 form=StudentRegistration()  //creating an object 
 {'form':form} this is context
 
-8.in html
+8.in html, inside body inside form tag csrf and {form.as_P}
 
