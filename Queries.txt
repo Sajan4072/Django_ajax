@@ -1,7 +1,12 @@
-in place of model user, they say default user ??
+1..in place of model user, they say default user ??
 
-proper use of migration ??? in actual world and project??
+2..proper use of migration ??? in actual world and project??
 
-how forms.py(modelfrom,meta etc) and it actually works??
+3..how forms.py(modelfrom,meta etc) and it actually works??
 
-form-control in bootstrap ??
+4..form-control in bootstrap ??
+5..admin dekhi data insert garepachi migration garnu parcha ki nai ?
+==> what ive found is tyo garepachi git status garda// modified db.sqlite vanera auudo rahecha
+
+
+6.. col-sm-7 ,col-sm-4 ??? total 11 ho ?
