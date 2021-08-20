@@ -5,15 +5,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-widht,initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'ajaxapp/css/bootstrap.css %}" />
+    <link rel="stylesheet" href="{% static 'ajaxapp/css/bootstrap.css' %}" />
     <title>try</title>
 </head>
 
 <body>
-    <form action="" method="post">
-        {% csrf_token %} {{ form.as_p }}
+    <div class="container mt-5">
+        <h2 class="text-center alert alert-danger">
+            CRUD OPERATION USING AJAX
+        </h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4 class="text-center alert alert-info">ADD/UPDATE/Student</h4>
+                <form action="" method="post">
+                    {% csrf_token %} {{ form.as_p }}
 
-    </form>
+                </form>
+                <input type="button" class="btn btn-success" id="btnsave" value="save" />
+            </div>
+
+        </div>
+
+    </div>
+
     <script src="{% static 'ajaxapp/js/jquery.js' %}"></script>
     <script src="{% static 'ajaxapp/js/popper.js' %}"></script>
     <script src="{% static 'ajaxapp/js/bootstrap.js' %}"></script>
