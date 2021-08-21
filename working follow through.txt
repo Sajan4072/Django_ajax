@@ -42,5 +42,22 @@ form=StudentRegistration()
     stud=User.objects.all() 
     return render(request,'ajaxapp/home.html',{'form':form,'stu':stud})
 
-15.. aba html ma loop chalaune to render data
+15.. aba html ma loop chalaune to render data in <tbody>
+ie 
+<tbody>
+                        {%for st in stu%}
+                        <tr>
+
+                            <td>{{st.id}}</td>
+                            <td>{{st.name}}</td>
+                            <td>{{st.email}}</td>
+                            <td>{{st.password}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+
+
+16...
+
 
