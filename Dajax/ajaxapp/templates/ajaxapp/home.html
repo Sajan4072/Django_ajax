@@ -39,6 +39,17 @@
 
                         </tr>
                     </thead>
+                    <tbody>
+                        {%for st in stu%}
+                        <tr>
+
+                            <td>{{st.id}}</td>
+                            <td>{{st.name}}</td>
+                            <td>{{st.email}}</td>
+                            <td>{{st.password}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
 
 
                 </table>
