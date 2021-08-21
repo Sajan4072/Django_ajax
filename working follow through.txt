@@ -33,5 +33,14 @@ i.e in forms.py
 
 12.. now data retrieval ko kam on other side since theres no data we insert using admin( admin dekhi data insert garepachi migration garnu parcha ki nai ?) 
 
+13..<thead> <tr> </tr> <tr> </tr></thead>
 
+14..to retrieve data in view datbase dekhi data tanne ho ani context ma pass garne 
+
+note eutai return ma 2 ta context ni pass garna milcha eg
+form=StudentRegistration()
+    stud=User.objects.all() 
+    return render(request,'ajaxapp/home.html',{'form':form,'stu':stud})
+
+15.. aba html ma loop chalaune to render data
 
