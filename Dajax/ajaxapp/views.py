@@ -25,7 +25,13 @@ def save_data(request):
             password=request.POST['password']
             usr=User(name=name, email=email ,password=password)
             usr.save()
-            return JsonResponse({'status':'saved'})
+
+            #after it is saved in DB the server shall send it back to ajax call so it can be rendered without refreshing
+            stud=User.objects.values()
+            student_data=list(stud)
+
+
+            return JsonResponse({'status':'saved','student_data':student_data})
         else:
             return JsonResponse({'status':0})
 
