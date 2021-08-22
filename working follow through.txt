@@ -84,8 +84,19 @@ and the server(which will store it in DB) will give a response(data) which we wi
 19..creating a view to store data in DB 
 in views once you validate the request 
 ,create a User object where name goes to name column and email goes to email column
+and save and 
+return jsonResponse
 
-20..
+
+
+20..csrf protection in save_data view 
+--if you view source ,there is hidde input with name and value that generates
+csrf token this should be sent to server so do that in script
+that will be sent with the request and will utimately be used in views
+
+
+21..
+
 
 
 

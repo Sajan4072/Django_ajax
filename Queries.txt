@@ -26,3 +26,6 @@
 13.. json string ??
 
 14.. JsonResponse??takes dictionary
+15..@csrf_exempt??
+
+16.. middlewares in django??
