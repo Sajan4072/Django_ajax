@@ -20,3 +20,7 @@
 10..data-sid attribute in <input> tag?
 
 11.. ajax ?? jquery ??
+
+12.. calling ajax $.ajax()
+
+13.. json string ??

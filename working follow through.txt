@@ -63,7 +63,25 @@ logic of it
 the data inserted in the form is to be captured send to server
 then server will isert it to DB and the server will send us somedata as response..
 
-17..data capturing 
+17..data capturing logic 
+when save button is pressed look the id of that input type and target it in script 
+
+and to capture=>
+let nm = $("#nameid").val();
+this is cuz in forms.py using widgets we have done something like 
+'name':forms.TextInput(attrs={'class':'form-control','id':'nameid'}),
+
+
+18..after grabbing create an object
+and
+call ajax
+and
+
+the request(ie the data) will go to the following url of ajax call via post/
+and the server(which will store it in DB) will give a response(data) which we will console.log()
+
+
+19..
 
 
 
