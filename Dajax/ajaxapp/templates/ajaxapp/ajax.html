@@ -11,9 +11,22 @@
         } else if (pw == "") {
             commsole.log("please enter password");
         } else {
-            console.log(nm);
-            console.log(em);
-            console.log(pw);
+            // console.log(nm);
+            // console.log(em);
+            // console.log(pw);
+            mydata = {
+                name: nm,
+                email: em,
+                password: pw
+            };
+            $.ajax({
+                url: "{% url '' %}",
+                method: "POST",
+                data: mydata, //can send them by making them json string as well
+                success: function(data) {
+                    console.log(data)
+                }
+            })
         }
     });
 </script>
