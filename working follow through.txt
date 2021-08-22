@@ -114,7 +114,7 @@ and return in Jsonresponse
 24..now use it in ajax.html
 console.log(data.student_data);
 and
-using loop update
+using loop update 
 
 
 
