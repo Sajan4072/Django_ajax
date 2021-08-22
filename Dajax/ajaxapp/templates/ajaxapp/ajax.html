@@ -20,7 +20,7 @@
                 password: pw
             };
             $.ajax({
-                url: "{% url '' %}",
+                url: "{% url 'save' %}",
                 method: "POST",
                 data: mydata, //can send them by making them json string as well
                 success: function(data) {
