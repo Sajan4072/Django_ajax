@@ -95,7 +95,28 @@ csrf token this should be sent to server so do that in script
 that will be sent with the request and will utimately be used in views
 
 
-21..
+21..form fields are not empty after submitting so 
+1)its easy reset garda vaihalcha the 2nd problem is the data that was inserted
+do not appear unless refreshed so fix that pani 
+
+22.mathi ko above 2 problems are to be fixed if our data is saved successfully 
+ 23.. to reset 
+$("form")[0].reset();
+
+24..to show the inserted data without refreshing 
+1st server dekhi data magaune in views after save
+by
+stud=User.objects.values()
+student_data=list(stud)
+
+and return in Jsonresponse
+
+24..now use it in ajax.html
+console.log(data.student_data);
+and
+using loop update
+
+
 
 
 

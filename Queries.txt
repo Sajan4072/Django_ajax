@@ -29,3 +29,8 @@
 15..@csrf_exempt??
 
 16.. middlewares in django??
+
+17..plain ajax??
+18 ..jquery alternatives ??
+
+19.. jquery simplifies ajax ??
