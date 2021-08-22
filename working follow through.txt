@@ -58,6 +58,13 @@ ie
 
 
 
-16...
+16... using ajax to update the inputed data in data retrieval field
+logic of it 
+the data inserted in the form is to be captured send to server
+then server will isert it to DB and the server will send us somedata as response..
+
+17..data capturing 
+
+
 
 
