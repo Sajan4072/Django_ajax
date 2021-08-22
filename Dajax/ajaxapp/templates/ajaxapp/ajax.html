@@ -27,7 +27,13 @@
                 method: "POST",
                 data: mydata, //can send them by making them json string as well
                 success: function(data) {
-                    console.log(data)
+                    // console.log(data)
+                    if (data.status == "saved") {
+                        console.log("Form submitted successfully");
+                    }
+                    if (data.status == 0) {
+                        console.log("unable to save");
+                    }
                 }
             })
         }
