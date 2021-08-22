@@ -24,3 +24,5 @@
 12.. calling ajax $.ajax()
 
 13.. json string ??
+
+14.. JsonResponse??takes dictionary

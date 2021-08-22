@@ -81,7 +81,11 @@ the request(ie the data) will go to the following url of ajax call via post/
 and the server(which will store it in DB) will give a response(data) which we will console.log()
 
 
-19..
+19..creating a view to store data in DB 
+in views once you validate the request 
+,create a User object where name goes to name column and email goes to email column
+
+20..
 
 
 
