@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .forms import StudentRegistration
 from .models import User
 from django.http import JsonResponse
+# from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def home(request):
@@ -14,7 +15,7 @@ def home(request):
 
 
 
-
+# @csrf_exempt
 def save_data(request):
     if request.method=="POST":
         form=StudentRegistration(request.POST)
