@@ -1,2 +1,19 @@
 <script>
+    $("#btnsave").click(function() {
+        console.log("save button clicked");
+        let nm = $("#nameid").val();
+        let em = $("#emailid").val();
+        let pw = $("#passwordid").val();
+        if (nm == "") {
+            console.log("please enter name");
+        } else if (em == "") {
+            console.log("please enter email");
+        } else if (pw == "") {
+            commsole.log("please enter password");
+        } else {
+            console.log(nm);
+            console.log(em);
+            console.log(pw);
+        }
+    });
 </script>
