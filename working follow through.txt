@@ -60,15 +60,59 @@ form tag csrf i.e
 
 
 9..styling the form with bootstrap by linking in head 
+using {% load static %} at first and
+<link rel="stylesheet" href="{% static 'ajaxapp/css/bootstrap.css' %}" />
+and same for scripts 
+
+
+    <script src="{% static 'ajaxapp/js/jquery.js' %}"></script>
+    <script src="{% static 'ajaxapp/js/popper.js' %}"></script>
+    <script src="{% static 'ajaxapp/js/bootstrap.js' %}"></script>
+
+
+
+
 
 10. create a div with class (and bootstrap such as mt-5,text-center,alert alert-danger etc can be given inside class itself)
+to make it look applealing 
+but forms ko fileds such as name,email,password wont appear appealing so we use widgets
+
 
 11...form ko fields ma widgets ko through dekhi classes lagaunu parcha 
 i.e in forms.py
+        widgets={
+            'name':forms.TextInput(attrs={'class':'form-control','id':'nameid'}),
+            'email':forms.EmailInput(attrs={'class':'form-control','id':'emailid'}),
+            'password':forms.TextInput(attrs={'class':'form-control','id':'passwordid'})
+        }
 
-12.. now data retrieval ko kam on other side since theres no data we insert using admin( admin dekhi data insert garepachi migration garnu parcha ki nai ?) 
 
-13..<thead> <tr> </tr> <tr> </tr></thead>
+
+
+
+
+12.. now data retrieval ko kam on other side since theres no data 
+we insert using admin( admin dekhi data insert garepachi migration garnu parcha ki nai ?) 
+
+
+
+13..
+create a table head #since table body afai populate hunu parcha 
+ <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+
+
+
+
 
 14..to retrieve data in view datbase dekhi data tanne ho ani context ma pass garne 
 
@@ -76,6 +120,10 @@ note eutai return ma 2 ta context ni pass garna milcha eg
 form=StudentRegistration()
     stud=User.objects.all() 
     return render(request,'ajaxapp/home.html',{'form':form,'stu':stud})
+
+
+
+
 
 15.. aba html ma loop chalaune to render data in <tbody>
 ie 
@@ -87,19 +135,67 @@ ie
                             <td>{{st.name}}</td>
                             <td>{{st.email}}</td>
                             <td>{{st.password}}</td>
+			    <td>
+                                <input type="button" data-sid="{{st.id}}" class="btn btn-warning btn-sm" value="Edit" />    #since edit and delete is also in table body
+                                <input type="button" data-sid="{{st.id}}" class="btn btn-danger btn-sm" value="Delete" />
+
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>
 
 
 
+
+
 16... using ajax to update the inputed data in data retrieval field
-logic of it 
-the data inserted in the form is to be captured send to server
-then server will isert it to DB and the server will send us somedata as response..
+so create a separate html file called ajax.html which will contain all the ajax scripts
+and just include it in home.html
+
+{% include "ajaxapp/ajax.html" %}
+
+
+==>logic of it 
+	the data inserted in the form is to be captured send to server
+	then server will isert it to DB and the server will send us somedata as response..
+
 
 17..data capturing logic 
-when save button is pressed look the id of that input type and target it in script 
+when save button is pressed look the id of that input type i.e
+ 
+<input type="button" class="btn btn-success" id="btnsave" value="save" />
+so id is btnsave
+
+and target it in script 
+i.e
+
+ $("#btnsave").click(function() {
+        console.log("save button clicked");
+        let nm = $("#nameid").val();
+        let em = $("#emailid").val();
+        let pw = $("#passwordid").val();
+	        let csr = $("input[name=csrfmiddlewaretoken]").val();
+        if (nm == "") {
+            console.log("please enter name");
+        } else if (em == "") {
+            console.log("please enter email");
+        } else if (pw == "") {
+            commsole.log("please enter password");
+        } else {
+            // console.log(nm);
+            // console.log(em);
+            // console.log(pw);
+            mydata = {
+                name: nm,
+                email: em,
+                password: pw,
+                csrfmiddlewaretoken: csr
+
+            };
+
+
+
+
 
 and to capture=>
 let nm = $("#nameid").val();
