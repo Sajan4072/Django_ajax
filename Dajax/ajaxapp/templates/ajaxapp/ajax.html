@@ -1,6 +1,7 @@
 <script>
     $("#btnsave").click(function() {
-        console.log("save button clicked");
+        //console.log("save button clicked");
+        output = "";
         let nm = $("#nameid").val();
         let em = $("#emailid").val();
         let pw = $("#passwordid").val();
@@ -49,6 +50,7 @@
                             value = 'Delete'
                             data - sid = "+x[i].id+ " / > "   
                         }
+                        $("tbody").html(output);
                         $("form")[0].reset(); //[0] since theres only 1 form 
                     }
                     if (data.status == 0) {
