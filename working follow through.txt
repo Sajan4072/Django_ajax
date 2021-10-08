@@ -326,10 +326,51 @@ using loop update
 
 
 26..
+after writting the output we targeted the tbody id and populated it with the output
+
+           $.ajax({
+                url: "{% url 'save' %}",
+                method: "POST",
+                data: mydata, //can send them by making them json string as well
+                //yo tala ko part chahi response hola
+                success: function(data) {
+                    // console.log(data)
+                    if (data.status == "saved") {
+                        console.log("Form submitted successfully");
+                        //if submitted then
+                        // console.log(data.student_data);
+                        x = data.student_data;
+                        //impr part
+                        for (i = 0; i < x.length; i++) {
+                            output += "<tr><td>" + x[i].id + "</td><td>" + x[i].name + "</td><td>" + x[i].email + "</td><td" +
+                                x[i].password + "</td><td>   <
+                            input type = 'button'
+
+                            class = 'btn btn-warning btn-sm'
+                            value = 'Edit'
+                            data - sid = "+ x[i].id+" / >
+                                <
+                                input type = 'button'
+                            class = 'btn btn-danger btn-sm'
+                            value = 'Delete'
+                            data - sid = "+x[i].id+ " / > "   
+                        }
+                        $("tbody").html(output);
+                        $("form")[0].reset(); //[0] since theres only 1 form 
+                    }
+                    if (data.status == 0) {
+                        console.log("unable to save");
+                    }
+                }
+            })
+        }
+    });
 
 
 
 
+
+27...
 
 
 
