@@ -15,7 +15,7 @@ def home(request):
 
 
 
-# @csrf_exempt
+#  @csrf_exempt
 def save_data(request):
     if request.method=="POST":
         form=StudentRegistration(request.POST)
@@ -28,6 +28,7 @@ def save_data(request):
 
             #after it is saved in DB the server shall send it back to ajax call so it can be rendered without refreshing
             stud=User.objects.values()
+            print(stud)
             student_data=list(stud)
 
 
