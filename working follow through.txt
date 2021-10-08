@@ -203,20 +203,84 @@ this is cuz in forms.py using widgets we have done something like
 'name':forms.TextInput(attrs={'class':'form-control','id':'nameid'}),
 
 
+
+
+
+
 18..after grabbing create an object
 and
 call ajax
-and
+
+
+$.ajax({
+                url: "{% url 'save' %}",
+                method: "POST",
+                data: mydata, //can send them by making them json string as well
+                //yo tala ko part chahi response hola
+                success: function(data) {
+                    // console.log(data)
+                    if (data.status == "saved") {
+                        console.log("Form submitted successfully");
+                        //if submitted then
+                        // console.log(data.student_data);
+                        x = data.student_data;
+                        //impr part
+                        for (i = 0; i < x.length; i++) {
+                            output += "<tr><td>" + x[i].id + "</td><td>" + x[i].name + "</td><td>" + x[i].email + "</td><td" +
+                                x[i].password + "</td><td>   <
+                            input type = 'button'
+                            data - sid = "+ {{st.id}}+"
+                            class = 'btn btn-warning btn-sm'
+                            value = 'Edit' / > "   
+                        }
+                        $("form")[0].reset(); //[0] since theres only 1 form 
+                    }
+                    if (data.status == 0) {
+                        console.log("unable to save");
+                    }
+                }
+            })
+        }
+    });
+
 
 the request(ie the data) will go to the following url of ajax call via post/
-and the server(which will store it in DB) will give a response(data) which we will console.log()
+and the server(which will store it in DB) will give a response(data) if it is success which we will console.log()
+
+
+
+
+
 
 
 19..creating a view to store data in DB 
+
 in views once you validate the request 
 ,create a User object where name goes to name column and email goes to email column
 and save and 
 return jsonResponse
+
+ie
+
+# @csrf_exempt
+def save_data(request):
+    if request.method=="POST":
+        form=StudentRegistration(request.POST)
+        if form.is_valid():
+            name=request.POST['name']
+            email=request.POST['email']
+            password=request.POST['password']
+            usr=User(name=name, email=email ,password=password)
+            usr.save()
+
+            #after it is saved in DB the server shall send it back to ajax call so it can be rendered without refreshing
+            stud=User.objects.values()
+            student_data=list(stud)
+
+
+            return JsonResponse({'status':'saved','student_data':student_data}) #this is also an api endpoint 
+        else:
+            return JsonResponse({'status':0})
 
 
 
@@ -226,13 +290,17 @@ csrf token this should be sent to server so do that in script
 that will be sent with the request and will utimately be used in views
 
 
+
+
 21..form fields are not empty after submitting so 
 1)its easy reset garda vaihalcha the 2nd problem is the data that was inserted
 do not appear unless refreshed so fix that pani 
 
+
 22.mathi ko above 2 problems are to be fixed if our data is saved successfully 
  23.. to reset 
 $("form")[0].reset();
+
 
 24..to show the inserted data without refreshing 
 1st server dekhi data magaune in views after save
@@ -242,10 +310,22 @@ student_data=list(stud)
 
 and return in Jsonresponse
 
-24..now use it in ajax.html
+20,21,22,23,24,25  is same thing as 18
+
+
+
+
+
+25..now use it in ajax.html
 console.log(data.student_data);
 and
 using loop update 
+
+
+
+
+
+26..
 
 
 

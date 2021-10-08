@@ -21,11 +21,12 @@
 
 11.. ajax ?? jquery ??(done)
 
-12.. calling ajax $.ajax()
+12.. calling ajax $.ajax() (done)
 
 13.. json string ??
 
-14.. JsonResponse??takes dictionary
+14.. JsonResponse??takes dictionary(done)
+
 15..@csrf_exempt??
 
 16.. middlewares in django??

@@ -31,7 +31,7 @@ def save_data(request):
             student_data=list(stud)
 
 
-            return JsonResponse({'status':'saved','student_data':student_data})
+            return JsonResponse({'status':'saved','student_data':student_data}) #this is also an api endpoint 
         else:
             return JsonResponse({'status':0})
 
